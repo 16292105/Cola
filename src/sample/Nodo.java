@@ -1,8 +1,5 @@
 package sample;
 
-/**
- * Created by Acer on 21/11/2017.
- */
 public class Nodo {
 
     private int valor;

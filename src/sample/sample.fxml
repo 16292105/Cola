@@ -1,26 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="aleLB" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Button fx:id="InsertarBtn" layoutX="269.0" layoutY="450.0" mnemonicParsing="false" text="Insertar" />
-      <Button fx:id="ordenarBtn" layoutX="332.0" layoutY="512.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="67.0" text="Tamaño " />
-      <ListView fx:id="ColasLv" layoutX="222.0" layoutY="82.0" prefHeight="319.0" prefWidth="286.0" />
-      <Button fx:id="VaciarBtn" layoutX="210.0" layoutY="512.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="56.0" text="Vaciar" />
-      <Label alignment="CENTER" layoutY="-2.0" prefHeight="40.0" prefWidth="800.0" styleClass="#FFFF" text="Colas">
-         <font>
-            <Font name="Gabriola" size="43.0" />
-         </font>
-      </Label>
-      <TextField fx:id="InsertarTxt" layoutX="52.0" layoutY="450.0" prefHeight="25.0" prefWidth="186.0" promptText="Numero que desea insertar" />
-      <Button fx:id="BuscarBtn" layoutX="614.0" layoutY="450.0" mnemonicParsing="false" text="Buscar" />
-      <TextField fx:id="BuscarTxt" layoutX="444.0" layoutY="450.0" prefHeight="25.0" prefWidth="164.0" promptText="Ingrese numero a buscar" />
-      <Button fx:id="ExtraerBtn" layoutX="459.0" layoutY="512.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="67.0" text="Extraer" />
-   </children>
-</Pane>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #fffff;" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <VBox prefHeight="600.0" prefWidth="1000.0">
+            <children>
+                <Label alignment="CENTER" prefHeight="100.0" prefWidth="1000.0" text="Manipulación de colas" textFill="#1a2ea1">
+                    <padding>
+                        <Insets left="40.0" />
+                    </padding>
+                    <font>
+                        <Font name="AngsanaUPC" size="36.0" />
+                    </font>
+                </Label>
+                <HBox fx:id="contenedorPrincipal" prefHeight="206.0" prefWidth="1000.0">
+                    <children>
+                        <ImageView fx:id="imagen" fitHeight="206.0" fitWidth="116.0" pickOnBounds="true">
+                            <HBox.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </HBox.margin>
+                            <image>
+                                <Image url="@Museum-icon.png" />
+                            </image></ImageView>
+                        <HBox fx:id="cola1" prefHeight="99.0" prefWidth="859.0">
+                            <HBox.margin>
+                                <Insets left="5.0" top="150.0" />
+                            </HBox.margin>
+                            <children>
+                            </children>
+                        </HBox>
+
+                    </children>
+                </HBox>
+                <HBox prefHeight="69.0" prefWidth="1000.0">
+                    <children>
+                        <Label fx:id="resultado" text="Resulltados" textFill="#1a2ea1">
+                            <HBox.margin>
+                                <Insets left="350.0" top="20.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font name="AngsanaUPC Bold" size="24.0" />
+                            </font></Label>
+                    </children>
+                </HBox>
+                <GridPane prefHeight="133.0" prefWidth="1000.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <TextField fx:id="insertarTxt" promptText="Ingrese número" GridPane.columnIndex="1">
+                            <GridPane.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </GridPane.margin></TextField>
+                        <Button fx:id="insertar" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" text="Insertar" GridPane.columnIndex="2" />
+                        <TextField fx:id="buscarTxt" prefHeight="22.0" prefWidth="313.0" promptText="Ingrese número" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </GridPane.margin></TextField>
+                        <Label text="Número que desea insertar:">
+                            <GridPane.margin>
+                                <Insets left="100.0" />
+                            </GridPane.margin>
+                            <font>
+                                <Font size="18.0" />
+                            </font></Label>
+                        <Label text="Valor que desea encontrar:" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets left="100.0" />
+                            </GridPane.margin>
+                            <font>
+                                <Font size="18.0" />
+                            </font></Label>
+                        <Button fx:id="buscar" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" text="Buscar" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                    </children>
+                </GridPane>
+                <HBox prefHeight="126.0" prefWidth="1000.0">
+                    <children>
+                        <Button fx:id="extraer" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" text="Extraer">
+                            <HBox.margin>
+                                <Insets left="430.0" top="20.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="vaciar" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" text="Vaciar">
+                            <HBox.margin>
+                                <Insets left="10.0" top="20.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="tamaño" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" text="Tamaño">
+                            <HBox.margin>
+                                <Insets left="10.0" top="20.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+
+            </children></VBox>
+    </children>
+</AnchorPane>
