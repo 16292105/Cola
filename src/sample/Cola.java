@@ -51,7 +51,7 @@ public class Cola {
         if(!vacia()){//Si la cola tiene valores
             frente=null;//Borra los elementos de cola
             tamaño=0;//Tamaño toma el valor de 0.
-            return "La cola ah sido vaciada";
+            return "La cola a sido vaciada";
         }else{//La cola no tiene valores
             return "La cola no tiene valores";
         }
@@ -66,7 +66,7 @@ public class Cola {
             }else{//Si el elemento esta después del primero
                 while(temp!= null){//Hasta que ya no tenga valores la cola
                     if(valor==temp.getValor()){
-                        return "El valor de"+valor+ "es igual a :"+i;
+                        return "El valor de "+valor+ " es igual a :"+i;
                     }
                     i++;//Incrementa el contador
                     temp= temp.getProx();//Recorre la cola con ayuda del temporal
