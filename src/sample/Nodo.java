@@ -2,7 +2,7 @@ package sample;
 
 public class Nodo {
 
-    private int valor;
+    private int valor;//Valor que da el usuario al elemneto
     private Nodo proximo;//Apunta al siguiente
     //Constructor inicializa sin valor
     public Nodo(){
@@ -14,19 +14,12 @@ public class Nodo {
         this.valor=valor;
         this.proximo=null;
     }
-
-    public void setValor(int valor){
-        this.valor=valor;
-    }
-
-    public void setProx(Nodo siguiente){
-        this.proximo=siguiente;
-    }
-
+//Getters y Setters del valor que da el usuario a nuestro puntero.
+    public void setValor(int valor){this.valor=valor;}
+    public void setProx(Nodo siguiente){this.proximo=siguiente;}
     public int getValor(){
         return this.valor;
     }
-
     public Nodo getProx(){
         return this.proximo;
     }
